@@ -41,13 +41,17 @@ from ..singly_linked_list.singly_linked_list import *
 
 class Queue:
     def __init__(self):
-        pass
+        self.size = 0
+        self.storage = LinkedList()
 
     def __len__(self):
-        pass
+        return self.size
 
     def enqueue(self, value):
-        pass
+        self.storage.add_to_tail(value)
+        self.size += 1
 
     def dequeue(self):
-        pass
+        if self.size > 0:
+            self.size -= 1
+            return self.storage.remove_head()
